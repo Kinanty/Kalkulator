@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/baground"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:id="@+id/imgView_logo"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/twitter"/>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="330dp"
+        android:layout_marginTop="20dp"
+        android:text="Daftar"
+        android:textSize="20sp"
+        android:textColor="@color/daftar"
+        android:textStyle="bold"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:text="Masuk ke Twitter."
+            android:textStyle="bold"
+            android:textColor="@color/tulisan"
+            android:textSize="25sp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ponsel, email, atau nama pengguna"
+            android:textColor="@color/tulisan"/>
+    </LinearLayout>
+    <EditText
+        android:id="@+id/txtemail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:inputType="textEmailAddress"
+        android:backgroundTint="@color/tulisan"
+        android:textColor="@color/tulisan"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:text="Kata sandi"
+        android:textColor="@color/tulisan"/>
+    <EditText
+        android:id="@+id/txtpassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:backgroundTint="@color/daftar"
+        android:inputType="textPassword"
+        android:textColor="@color/tulisan"
+        android:textColorHint="@color/tulisan"/>
+    <TextView
+        android:id="@+id/tvlupakatasandi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:paddingTop="15dp"
+        android:gravity="center"
+        android:textColor="@color/tulisan"
+        android:text="Lupa kata sandi?"/>
+
+
+
+     <View
+         android:layout_width="match_parent"
+         android:layout_height="1dp"
+         android:layout_marginLeft="-411dp"
+         android:layout_marginTop="740dp"
+         android:paddingTop="40dp"
+         android:background="@color/tulisan" />
+     <Button
+         android:id="@+id/btnmasuk"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="Masuk"
+         android:textColor="@color/tulisan"
+         android:layout_marginLeft="270dp"
+         android:layout_marginTop="750dp"
+         android:background="@drawable/custom_button"/>
+
+
+</RelativeLayout>
