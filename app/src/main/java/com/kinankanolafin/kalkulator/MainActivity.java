@@ -1,6 +1,9 @@
 package com.kinankanolafin.kalkulator;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 
 import android.os.Bundle;
@@ -22,7 +25,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView tvResult;
     private String bil1;
     private String bil2;
-
+    Button btn_logout;
+    static SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,22 +40,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnMultiple = findViewById(R.id.btn_multiple);
         btnDivision = findViewById(R.id.btn_division);
         tvResult = findViewById(R.id.tv_result);
+        btn_logout = findViewById(R.id.btn_logout);
         tvuser= findViewById(R.id.tvuser);
-
+        sharedPreferences = getSharedPreferences("login", MODE_PRIVATE);
         btnAdd.setOnClickListener(this);
         btnSubstract.setOnClickListener(this);
         btnMultiple.setOnClickListener(this);
         btnDivision.setOnClickListener(this);
+        btn_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sharedPreferences.edit().clear().commit();
+                Intent intent = new Intent(MainActivity.this, ClassControl.class);
+                startActivity(intent);
+            }
+        });
 
-        String useremail;
-        Bundle Email=getIntent().getExtras();
-        if(Email== null){
-            useremail="null";
-        }else {
-            useremail= Email.getString("Email");
-        }
-        useremail= Email.getString("Email");
-        tvuser.setText(useremail);
+
+        String name;
+        Bundle bd = getIntent().getExtras();
+        if(bd==null){
+            name = "@kinant215";
+        }else{
+            name = bd.getString("Email");
+        } tvuser.setText(name);
         }
 
     public boolean validation() {
